@@ -1,0 +1,46 @@
+grep -Er '0+' /etc = egrep -r '0+' /etc
+
+Find files that contains strings that have at least three zeros
+egrep -r '0{3,}' /etc
+
+Find files that contains strings that have at most three zeros
+egrep -r '0{,3}' /etc
+
+Find files that contains strings that have exactly three zeros
+egrep -r '0{3}' /etc
+
+find files that contain strings that have at least 3 zeros and at most 5 zeros
+egrep -r '0{3,5}' /etc
+
+find lines of text that contains the strings enabled or disabled
+egrep -ir 'enabled|disabled' /etc
+
+find lines of text that contains the strings enable or disable or enabled or disabled 
+egrep -ir 'enabled?|disabled?' /etc
+
+find lines that contain either cat or cut string files(USE OF SET)
+egrep -ir 'c[at]t' /etc
+
+find lines that contain device name like /dev/sda1 (USE OF RANGE)
+
+egrep -ir '/dev/[a-z]*' /etc
+
+find lines that contain device name like /dev/sda1 (USE OF RANGE IMPROVED)
+egrep -ir '/dev/[a-z]*[0-9]' /etc
+
+find lines that contain device name like /dev/sda1 (USE OF RANGE  FURTHER IMPROVED)
+egrep -ir '/dev/[a-z]*[0-9]?' /etc
+
+find lines that contain device name like /dev/tty0p0
+egrep -ir '/dev/([a-z]*[0-9]?)*' /etc
+
+find lines that contain device name like /dev/tty0p0(IMPROVED)
+egrep -r egrep -r '/dev/(([a-z]|[A-Z])*[0-9]?)*' /etc
+
+find lines that contain http link strings only()
+egrep -r 'http[^s]' /etc/
+
+find lines that contain dont contain any lower capital letters
+egrep -r '/[^a-z]' /etc/
+
+more information can be found from https://regexr.com/

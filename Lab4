@@ -1,0 +1,20 @@
+Which of the following commands you will use to display the top 5 lines of a file called myfile?. The answer is head -n 5 file_name
+Which of the following commands can be used to manipulate strings in a file?. The answer is SED the stream editor command sed
+Which of the following commands you can use to filter out the lines that contain a particular pattern?. The answer is GREP using the grep command
+How can we ignore the case (small or capital) differences while comparing two files using diff command?. The answer is: diff -i
+You have below given content in /home/bob/testfile (this is just an example file):
+a;b;c;d
+x;y;z
+How would you extract/print the b and the y?. The answer is: cut -d ';' -f 2 /home/bob/testfile
+Change all values enabled to disabled in /home/bob/values.conf config file. The answer is: sed -i 's/enabled/disabled/g' /home/bob/values.conf
+While ignoring the case sensitivity, change all values disabled to enabled in /home/bob/values.conf config file.The answer is sed -i 's/disabled/enabled/gi'  /home/bob/values.conf
+Change all values enabled to disabled in /home/bob/values.conf config file from line number 500 to 2000. The answer is sed -i '500,2000s/enabled/disabled/g' /home/bob/values.conf 
+Replace all occurrence of string #%jh//238720//31223 with //23872031223 in /home/bob/data.txt file. The answer is sed -i 's~#%$2jh//238720//31223~$2//23872031223~g' /home/bob/data.txt 
+Filter out the lines that contain any word that starts with a capital letter and are then followed by exactly two lowercase letters in /etc/nsswitch.conf file and save the output in /home/bob/filtered1 file. You can use the redirection to save your command's output in a file i.e [your-command] > /home/bob/filtered1. The answer is sudo egrep -w '[A-Z][a-z]{2}' /etc/nsswitch.conf
+Open /home/bob/testfile file in any editor (vi, nano etc) and move line present on line no:1049 to line no: 5. The answer is vim +1049 /home/bob/testfile; then type DD then type :5 then type y 
+/home/bob/file1 and /home/bob/file2 are 99% identical. But there's 1 unique line that exists only in /home/bob/file1 or in /home/bob/file2. Find that line and save the same in /home/bob/file3 file. The answer is diff file1 file2 | tee -a file3
+In /home/bob/textfile file there's a number that has 5 digits. Save the same in /home/bob/number file. You can use the redirection to save your command's output in a file i.e [your-command] > /home/bob/number. The answer is egrep -r '[0-9]{5}' /home/bob/textfile | tee -a /home/bob/number
+How many numbers in /home/bob/textfile begin with a number 2, save the count in /home/bob/count file. You can use the redirection to save your command's output in a file i.e [your-command] > /home/bob/count. The answer is egrep -r '^2' /home/bob/textfile | wc -l | tee -a /home/bob/count
+ How many lines in /home/bob/testfile file begin with string Section, iregardless of case. Save the count in /home/bob/count_lines file. The answer is egrep -ir '^Section' /home/bob/testfile | wc -l | tee -a /home/bob/count_lines
+Find all lines in /home/bob/testfile file that contain string man, it must be an exact match. For example the line like # before /usr/man. or NOCACHE keeps man should match but # given manpath. or For a manpath must not match. Save the filtered lines in /home/bob/man_filtered file. The answer is grep -w man testfile > /home/bob/man_filtered
+Save last 500 lines of /home/bob/textfile file in /home/bob/last file. The answer is: tail -n 500 /home/bob/textfile > /home/bob/last

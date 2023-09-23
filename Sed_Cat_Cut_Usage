@@ -1,0 +1,57 @@
+touch userinfo.txt
+
+ravi seattle usa 39483930 india
+mark toronto canada 12345678 canada
+john newyork usa 39348495 usa
+ravi montreal canda 39484859 canda
+mary ottawa canda 39384940 canda
+
+Preview using stream editors(sed)
+
+sed 's/canda/canada/g' userinfo.txt
+
+Now actually make the change
+
+sed -i 's/canda/canada/g' userinfo.txt
+
+
+ravi seattle usa 39483930 india
+mark toronto canada 12345678 canada
+john newyork usa 39348495 usa
+ravi montreal canada 39484859 canada
+mary ottawa canada 39384940 canada
+
+
+extract specific contents of a file using cut
+
+cut -d ' ' -f 1 userinfo.txt
+
+ravi
+mark
+john
+ravi
+mary
+
+
+Our example with a different format
+
+ravi,seattle,usa,39483930,india
+mark,toronto,canada,12345678,canada
+john,newyork,usa,39348495,usa
+ravi,montreal,canada,39484859,canada
+mary,ottawa,canada,39384940,canada
+
+
+cut -d ',' -f 3 userinfo.txt | tee -a countries.txt
+
+cat countries.txt
+
+usa
+canada
+usa
+canada
+canada
+
+diff
+diff -y
+diff -c

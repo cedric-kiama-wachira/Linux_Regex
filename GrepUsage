@@ -1,0 +1,22 @@
+grep 'CENTOS' file.txt
+
+grep 'centos' file.txt
+
+grep -i 'Centos' file.txt
+
+CENTOS Centos
+
+sudo grep -ir 'Centos' /dir
+
+returns all words without Centos - Invert Match Option
+
+sudo grep -vir 'Centos' /dir
+
+returns all exact words
+
+grep -wi 'Centos' filename
+grep -wir 'Centos' /dir
+
+extract only matching option not lines
+
+grep -io 'Centos' /filename
